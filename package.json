@@ -7,7 +7,6 @@
     "email": "felipe.pinheiro.90@hotmail.com"
   },
   "dependencies": {
-    "htmlencode": "^0.0.4",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
   },

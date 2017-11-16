@@ -1,14 +1,13 @@
-const htmlencode = require('htmlencode');
 const request = require('request-promise-native');
 
 /**
- * Encode a query to HTML
+ * Encode a query
  * @param {string} query The query to encode
- * @returns {string} The query html encoded
+ * @returns {string} The query encoded
  */
 const encodeQuery = (query) => {
   const queryTrimmed = query.trim();
-  const queryEncoded = htmlencode.htmlEncode(queryTrimmed);
+  const queryEncoded = queryTrimmed.replace(' ', '+');
 
   return queryEncoded;
 };

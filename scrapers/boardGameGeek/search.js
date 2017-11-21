@@ -1,3 +1,4 @@
+const { BASE_URL } = require('./constants');
 const request = require('request-promise-native');
 
 /**
@@ -20,7 +21,7 @@ const encodeQuery = (query) => {
 const url = (query) => {
   const encodedQuery = encodeQuery(query);
 
-  return `https://boardgamegeek.com/search/boardgame?q=${encodedQuery}&showcount=20`;
+  return `${BASE_URL}/search/boardgame?q=${encodedQuery}&showcount=20`;
 };
 
 /**

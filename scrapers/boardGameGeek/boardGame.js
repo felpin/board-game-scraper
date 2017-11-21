@@ -56,7 +56,15 @@ const getDescription = async id => getContentOfMetaProperty(id, 'description');
  */
 const getImageUrl = async id => getContentOfMetaProperty(id, 'image');
 
+/**
+ * Get the title of the board game
+ * @param {number} id The id of the board game
+ * @returns {string} The title of the board game
+ */
+const getTitle = async id => getContentOfMetaProperty(id, 'title');
+
 module.exports = {
   getDescription,
   getImageUrl,
+  getTitle,
 };

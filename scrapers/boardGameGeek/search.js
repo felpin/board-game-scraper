@@ -1,17 +1,6 @@
-const { BASE_URL } = require('./constants');
 const request = require('request-promise-native');
-
-/**
- * Encode a query
- * @param {string} query The query to encode
- * @returns {string} The query encoded
- */
-const encodeQuery = (query) => {
-  const queryTrimmed = query.trim();
-  const queryEncoded = queryTrimmed.replace(' ', '+');
-
-  return queryEncoded;
-};
+const { BASE_URL } = require('./constants');
+const queryUtils = require('../../utils/query');
 
 /**
  * Constructs the search URL
@@ -19,7 +8,7 @@ const encodeQuery = (query) => {
  * @returns {string} The search URL
  */
 const url = (query) => {
-  const encodedQuery = encodeQuery(query);
+  const encodedQuery = queryUtils.encode(query);
 
   return `${BASE_URL}/search/boardgame?q=${encodedQuery}&showcount=20`;
 };

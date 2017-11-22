@@ -46,7 +46,6 @@ const search = async (query) => {
   const htmlResponse = await request(searchUrl);
   const $ = cheerio.load(htmlResponse);
 
-  // TODO: get only the content
   const items = [];
 
   const anchors = $('#bloco-jogos-sm').find('a.full-link');
